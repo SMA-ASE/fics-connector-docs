@@ -1,8 +1,8 @@
 ---
-sidebar_label: 'SMAParseResponceFile'
+sidebar_label: 'SMAParseResponseFile'
 ---
 
-# SMA Parse Responce File
+# SMA Parse Response File
 
 ## Overview
 
