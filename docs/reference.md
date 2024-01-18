@@ -50,9 +50,9 @@ Additionally, the number (and composition) of a request can change as new releas
 
 1. Some of the processes excuted by FICS require that the same time stamp be used for each of them. For example, in processing the daily report bundle, you must use the same time stamp for the update cycle for successful completion. Instead of trying to capture the timestamp used from the response, consider the following strategy:
 * Create a global property called FICS_Timestamp.(The initial value is not important.)
-* Create a global property called $NOWYYYY-MM-DDhh:nn. Its value should be: YYYY-MM-DDhh:nn
+* Create a global property called $NOWYYYY-MM-DDThh:mm:ss. Its value should be: YYYY-MM-DD\Thh:mm:ss
 * Create a Null job with one event. The event should be:
-   * $Property:Set,FICS_TimeStamp,$NOWYYYY-MM-DDhh:nn 
+   * $Property:Set,FICS_TimeStamp,[[$NOWYYYY-MM-DDThh:mm:ss]] 
    * Set this job to run at the very beginning of each processing day.
 
 * Now, anytime there is a need for timestamp coordination, use [[FICS_Timestamp]] in the request files.
